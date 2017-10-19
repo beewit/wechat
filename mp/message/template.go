@@ -2,10 +2,10 @@ package message
 
 import (
 	"encoding/json"
-	"github.com/beewit/wechat/util"
-	"github.com/pkg/errors"
 	"fmt"
 	"github.com/beewit/wechat/mp/core"
+	"github.com/beewit/wechat/util"
+	"github.com/pkg/errors"
 )
 
 var incompleteURL = "https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=%s"
@@ -41,6 +41,7 @@ func Send(msg interface{}) (msgid int64, err error) {
 	if err != nil {
 		return
 	}
+	println("sendUrl", fmt.Sprintf(incompleteURL, token))
 	bytes, err := util.PostJSON(fmt.Sprintf(incompleteURL, token), msg)
 	if err != nil {
 		return

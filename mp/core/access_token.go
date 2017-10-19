@@ -70,7 +70,7 @@ func (app *AppAccessToken) GetAccessTokenFromServer() (resAccessToken accessToke
 
 	accessTokenCacheKey := fmt.Sprintf("access_token_%s", app.AppID)
 	expires := resAccessToken.ExpiresIn - 1500
-	_, err = global.RD.SetAndExpire(accessTokenCacheKey, resAccessToken.Token, expires)
+	_, _ = global.RD.SetAndExpire(accessTokenCacheKey, resAccessToken.Token, expires)
 
 	return
 }

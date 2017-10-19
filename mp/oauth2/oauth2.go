@@ -1,10 +1,10 @@
 package oauth2
 
 import (
-	"github.com/beewit/wechat/util"
-	"github.com/beewit/wechat/global"
 	"encoding/json"
 	"errors"
+	"github.com/beewit/wechat/global"
+	"github.com/beewit/wechat/util"
 )
 
 type AccessToken struct {
