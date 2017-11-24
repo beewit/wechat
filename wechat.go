@@ -7,7 +7,7 @@ import (
 func main() {
 	var tm message.TemplateMessage
 	tm.ToUser = "oRDhB03JEmQcIhY_W9Q0dTq1e7-s"
-	tm.URL = "http://www.tbqbz.com/"
+	tm.URL = "http://www.9ee3.com/"
 	tm.TemplateId="gTCuxY42MKftPVnbhbd8VYeY1-_TTPLRxenbdW17_xg"
 	tm.Data = map[string]interface{}{
 		"first":    "《图形验证码》输入提醒通知",
