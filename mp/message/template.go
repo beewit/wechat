@@ -3,7 +3,7 @@ package message
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/beewit/wechat/mp/core"
+
 	"github.com/beewit/wechat/util"
 	"github.com/pkg/errors"
 )
@@ -31,15 +31,10 @@ type DataItem struct {
 }
 
 // 发送模板消息, msg 是经过 encoding/json.Marshal 得到的结果符合微信消息格式的任何数据结构, 一般为 *TemplateMessage 类型.
-func Send(msg interface{}) (msgid int64, err error) {
-
+func Send(msg interface{}, token string) (msgid int64, err error) {
 	var result struct {
 		util.CommonError
 		MsgId int64 `json:"msgid"`
-	}
-	token, err := core.AccessToken.GetAccessToken()
-	if err != nil {
-		return
 	}
 	println("sendUrl", fmt.Sprintf(incompleteURL, token))
 	bytes, err := util.PostJSON(fmt.Sprintf(incompleteURL, token), msg)

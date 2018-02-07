@@ -15,7 +15,7 @@ func main() {
 		"keyword2": map[string]string{"value": "10分钟过期", "color": "#173177"},
 		"remark":   "value",
 	}
-	msgId, err := message.Send(tm)
+	msgId, err := message.Send(tm,"")
 	if err != nil {
 		println("error:", err.Error())
 	} else {
