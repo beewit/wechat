@@ -9,7 +9,7 @@ import (
 	"net/url"
 	"reflect"
 
-	"github.com/chanxuehong/wechat/json"
+	"encoding/json"
 )
 
 type MultipartFormField struct {
